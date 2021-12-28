@@ -1,0 +1,271 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background-color: #11101d;
+    padding: 6px 14px;
+    transition: all .5s ease;
+}
+
+.sidebar.active {
+    width: 240px;
+}
+
+.sidebar.active .bx-search {
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    color: #fff;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
+}
+
+.sidebar.active .logo {
+    opacity: 1;
+    pointer-events: none;
+}
+
+.logo i {
+    font-size: 28px;
+    margin-right: 5px;
+}
+
+.logo_name {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#btn {
+    position: absolute;
+    color: #fff;
+    left: 50%;
+    top: 6px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.sidebar.active #btn {
+    left: 90%;
+}
+
+ul {
+    margin-top: 20px;
+}
+
+ul li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+    display: block;
+}
+
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+ul li a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all .4s ease;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+
+ul li a:hover {
+    color: #11101d;
+    background-color: #fff;
+}
+
+ul li a i {
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+ul li input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    background-color: #1d1b31;
+    padding-left: 50px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.bx-search {
+    position: absolute;
+    z-index: 99;
+    color: #fff;
+    font-size: 22px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .5s ease;
+    cursor: pointer;
+}
+
+.profile_content {
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+}
+
+.profile {
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+    background-color: none;
+    transition: all .4s ease;
+}
+
+.sidebar.active .profile {
+    background-color: #1d1b31;
+}
+
+.profile_details {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.sidebar.active .profile_details {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+img {
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.name_job {
+    margin-left: 10px;
+}
+
+.name {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.job {
+    font-size: 12px;
+}
+
+#log_out {
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all .4s ease;
+    background-color: #1d1b31;
+}
+
+.sidebar.active #log_out {
+    left: 88%;
+    background-color: none;
+}
+
+.home_content {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all .5s ease;
+}
+
+.text {
+    font-size: 25px;
+    font-weight: 500;
+    color: #1d1b31;
+    margin: 12px;
+}
+
+.tooltip {
+    position: absolute;
+    left: 122px;
+    top: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    line-height: 35px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0s;
+}
+
+ul li:hover .tooltip {
+    transition: all .5s ease;
+    opacity: 1;
+    top: 50%;
+}
+
+.link_name {
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
+}
+
+.sidebar.active .link_name {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sidebar.active ~ .home_content {
+    width: calc(100% - 24px);
+    left: 240px;
+}
